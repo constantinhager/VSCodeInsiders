@@ -1,0 +1,38 @@
+{
+  "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2021-11",
+  "Commands": [
+    {
+      "Verb": "Show",
+      "Noun": "VSCIInstalledExtension",
+      "OriginalName": "code-insiders",
+      "OriginalCommandElements": [
+        "--list-extensions",
+        "--show-versions"
+      ],
+      "Platform": [
+        "Windows",
+        "Linux",
+        "MacOS"
+      ],
+      "DefaultParameterSetName": "Default",
+      "Description": "Description: Displays all installed VSCode extensions with their versions.",
+      "Usage": {
+        "Synopsis": "Synopsis: Displays all installed VSCode extensions with their versions."
+      },
+      "Examples": [
+        {
+          "Command": "Show-VSCIInstalledExtension",
+          "Description": "Displays all installed VSCode extensions with their versions.",
+          "OriginalCommand": "code-insiders.exe --list-extensions --show-versions"
+        }
+      ],
+      "OutputHandlers": [
+        {
+          "ParameterSetName": "Default",
+          "Handler": "parseExtension",
+          "HandlerType": "Function"
+        }
+      ]
+    }
+  ]
+}
