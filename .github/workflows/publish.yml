@@ -33,5 +33,4 @@ jobs:
       - name: Compile Crescendo Module
         run: |
           . .\OutputHandlers\parseExtension.ps1
-           Export-CrescendoModule -ConfigurationFile "vscodeinsiders.crescendo.config.json -ModuleName "VSCodeInsiders"
         shell: pwsh
