@@ -1,0 +1,20 @@
+name: Workflow
+
+on:
+  push:
+    branches:
+      - "main"
+      - "feature/listcodeapplications"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Download Repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Calculate gitVersion
+        id: gitVersion
+        uses: gittools/actions/gitversion/execute@v0.9.7
