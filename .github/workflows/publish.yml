@@ -23,3 +23,15 @@ jobs:
       - name: Calculate gitVersion
         id: gitVersion
         uses: gittools/actions/gitversion/execute@v0.9.7
+
+      - name: Install and cache PowerShell modules
+        id: psmodulecache
+        uses: potatoqualitee/psmodulecache@v4.5
+        with:
+          modules-to-cache: Microsoft.PowerShell.Crescendo
+
+      - name: Compile Crescendo Module
+        run: |
+          . .\OutputHandlers\parseExtension.ps1
+           Export-CrescendoModule -ConfigurationFile "vscodeinsiders.crescendo.config.json -ModuleName "VSCodeInsiders"
+        shell: pwsh
